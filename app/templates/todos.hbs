@@ -1,0 +1,25 @@
+<section id="todoapp">
+<header>
+<h1>Task-List</h1>
+{{input type="text" id="search-task" placeholder="seach task" value=filterString}}
+{{input type="checkbox" label="Sort By Due Date" checked=isSortedByDate}}
+{{#link-to 'todos.new'}}new task{{/link-to}}
+</header>
+{{outlet}}
+<section id="list">	
+<ul>
+{{#each todo in filteredModel itemController="todo"}}
+<li>
+<p>
+{{input type="checkbox" checked=todo.isCompleted class="toggle"}}
+{{todo.title}}
+</p>
+<p>Due:-{{todo.dueDate}}</p>
+{{#link-to 'todos.edit' todo.id class="btn btn-primary"}}Edit{{/link-to}}
+<input type="submit" class="btn btn-danger remove_fields"  value="Delete" {{action 'deleteRecord'}}/>
+
+</li>
+{{/each}}
+</ul>
+</section>
+</section>

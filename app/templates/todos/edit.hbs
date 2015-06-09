@@ -1,0 +1,10 @@
+<form id="new-app">
+<h1>Edit Task</h1>
+{{input type="text" placeholder=model.title value=titleValue}}
+{{input type="textarea" placeholder=model.description value=descriptionValue}}
+{{input type="date" placeholder=model.dueDate value=dateValue}}
+<p>
+<input type="submit" value="Save" {{action 'save'}}/>
+<input type="submit" value="Cancel" {{action 'cancel'}}/>
+</p>
+</form>

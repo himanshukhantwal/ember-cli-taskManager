@@ -5,5 +5,11 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-export default Router.map(function() {
+Router.map(function() {
+	this.resource('todos',{path:'/'},function(){
+		this.route('edit',{path:'edit/:todo_id'});
+		this.route('new',{path:'new'});
+	});
 });
+
+export default Router;

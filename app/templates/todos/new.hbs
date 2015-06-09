@@ -1,0 +1,10 @@
+<form id="new-app">
+<h1>New Task</h1>
+{{input type="text" placeholder="title" value=titleValue}}
+{{input type="textarea" placeholder="description" value=descriptionValue}}
+{{input type="date" value=dateValue}}
+<p>
+<input type="submit" value="Add" {{action 'add'}}/>
+<input type="submit" value="Cancel" {{action 'cancel'}}/>
+</p>
+</form>
