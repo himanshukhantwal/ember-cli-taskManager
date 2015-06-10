@@ -18,11 +18,11 @@ export default Ember.ArrayController.extend({
 				filteredModel=model;
 			}else{
 					filteredModel=model.filter(function(data){
-						if(data.get('title').indexOf(filteredString)!==-1){
+						if((data.get('title')).toLowerCase().indexOf(filteredString.toLowerCase())!==-1){
 							return true;
 						}
 					});
-			}		
+			}
 			if(!isSortedByDate){
 				return filteredModel;
 			}else{

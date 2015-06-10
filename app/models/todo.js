@@ -15,7 +15,7 @@ todoList.reopenClass({
 			title:'go shopping',
 			description:'shopping is good for pocket',
 			isCompleted:false,
-			dueDate:new Date(12)
+			dueDate:new Date(122143567879)
 		},
 		{
 			id:2,

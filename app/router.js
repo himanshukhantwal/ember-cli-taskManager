@@ -9,6 +9,7 @@ Router.map(function() {
 	this.resource('todos',{path:'/'},function(){
 		this.route('edit',{path:'edit/:todo_id'});
 		this.route('new',{path:'new'});
+		this.route('test',{path:'test'});
 	});
 });
 
