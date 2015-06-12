@@ -4,6 +4,7 @@ export default Ember.ObjectController.extend({
 		deleteRecord:function(){
 			var model=this.get('model');
 			model.deleteRecord();
+			model.save();
 		}
 	},
 	isCompleted:function(key, value){
@@ -12,7 +13,7 @@ export default Ember.ObjectController.extend({
 			return model.get('isCompleted');
 		}else{
 			model.set('isCompleted',value);
-			// model.save();
+			model.save();
 			return value;
 		}
 	}.property('model.isCompleted')

@@ -17,9 +17,10 @@ export default Ember.ObjectController.extend({
 				var todo=this.store.createRecord('todo',{
 					title:titleValue,
 					dueDate:dueDateValue,
-					description:this.get('descriptionValue')
+					description:this.get('descriptionValue'),
+					isCompleted:false
 				});
-				//todo.save();
+				todo.save();
 			}
 			this.transitionTo('todos');
 		},

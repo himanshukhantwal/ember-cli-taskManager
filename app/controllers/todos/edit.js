@@ -15,9 +15,8 @@ export default Ember.Controller.extend({
 			}
 			if(dateValue){
 				todo.set('date',dateValue);
-			}
-			
-			// todo.save();	
+			}			
+			todo.save();	
 			this.transitionToRoute('todos');
 		},
 		cancel:function(){
