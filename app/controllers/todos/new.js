@@ -1,6 +1,9 @@
 import Ember from "ember";
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
+	titleValue:"",
+	dateValue:"",
+	descriptionValue:"",
 	actions:{
 		add:function(){
 			var titleValue=this.get('titleValue');
@@ -22,10 +25,10 @@ export default Ember.ObjectController.extend({
 				});
 				todo.save();
 			}
-			this.transitionTo('todos');
+			this.transitionToRoute('todos');
 		},
 		cancel:function(){
-			this.transitionTo('todos');
+			this.transitionToRoute('todos');
 		}
 	}
 });

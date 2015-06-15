@@ -1,11 +1,6 @@
 import Ember from "ember";
 
 export default Ember.ArrayController.extend({
-	actions:{
-		toggleIsCompleted:function(){
-				
-		}
-	},
 	filteredModel:function(){
 		var model=this.get('model'),
 			filteredString=this.get('filterString'),
@@ -29,6 +24,6 @@ export default Ember.ArrayController.extend({
 				return filteredModel.sortBy('dueDate');
 			}
 		}
-	}.property('filterString','@each','isSortedByDate')
+	}.property('filterString','model.@each','isSortedByDate')
 
 });

@@ -1,6 +1,9 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
+	dateValue:function(){
+			return moment(this.get('model').get('dueDate')).format('YYYY-MM-DDTHH:mm');
+	}.property('model'),
 	actions:{
 		save:function(){
 			var titleValue=this.get('titleValue'),
@@ -14,8 +17,9 @@ export default Ember.Controller.extend({
 				todo.set('description',descriptionValue);
 			}
 			if(dateValue){
-				todo.set('date',dateValue);
-			}			
+				dateValue=new Date(dateValue);
+				todo.set('dueDate',dateValue);
+			}	
 			todo.save();	
 			this.transitionToRoute('todos');
 		},
