@@ -1,14 +1,15 @@
-import Ember from "ember";
-export default Ember.ObjectController.extend({
+import Ember from 'ember';
+
+export default Ember.Component.extend({
 	actions:{
 		deleteRecord:function(){
-			var model=this.get('model');
+			var model=this.get('todo');
 			model.deleteRecord();
 			model.save();
 		}
 	},
-	isCompleted:function(key, value){
-		var model=this.get('model');
+	todoIsCompleted:function(key, value){
+		var model=this.get('todo');
 		if(value===undefined){
 			return model.get('isCompleted');
 		}else{

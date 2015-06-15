@@ -2,23 +2,14 @@
 	<header>
 		<h1>Task-List</h1>
 		{{input type="text" id="search-task" placeholder="seach task" value=filterString}}
-		{{#link-to 'todos.new' class="btn btn-info"}}new task{{/link-to}}
+		{{#link-to 'todos.new' class="btn btn-info"}}+ new task{{/link-to}}
 		{{input type="checkbox" label="Sort By Due Date" checked=isSortedByDate}}	
 	</header>
 	{{outlet}}
 	<section id="list">	
 		<ul>
-		{{#each todo in filteredModel itemController="todo"}}
-		<li>
-			<div class="checkbox checkbox-success">
-				<label for="checkbox-complete" ></label>
-				{{input name='checkbox-complete' type="checkbox" checked=todo.isCompleted}}
-			</div>	
-			<h1>{{todo.title}}</h1>
-			<p>Due:-{{todo.dueDate}}</p>
-			{{#link-to 'todos.edit' todo.id class="btn btn-primary"}}Edit{{/link-to}}
-			<input type="submit" class="btn btn-danger remove_fields"  value="Delete" {{action 'deleteRecord'}}/>
-		</li>
+		{{#each todo in filteredModel}}
+			{{show-list todo=todo}}
 		{{/each}}
 		</ul>
 	</section>

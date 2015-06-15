@@ -1,0 +1,10 @@
+<li>
+	<div class="checkbox checkbox-success">
+		<label for="checkbox-complete" ></label>
+		{{input name='checkbox-complete' type="checkbox" checked=todoIsCompleted}}
+	</div>	
+	<h1>{{todo.title}}</h1>
+	<p>Due:-{{todo.dueDate}}</p>
+	{{#link-to 'todos.edit' todo.id class="btn btn-primary"}}Edit{{/link-to}}
+	<input type="submit" class="btn btn-danger remove_fields"  value="Delete" {{action 'deleteRecord'}}/>
+</li>
