@@ -1,10 +1,11 @@
-<li>
-	<div class="checkbox checkbox-success">
-		<label for="checkbox-complete" ></label>
-		{{input name='checkbox-complete' type="checkbox" checked=todoIsCompleted}}
-	</div>	
+<li >
+	<label for="checkbox-complete" ></label>
+	{{input name='checkbox-complete' type="checkbox" checked=todoIsCompleted}}
 	<h1>{{todo.title}}</h1>
 	<p>Due:-{{todo.dueDate}}</p>
+	<div class="todo-description" {{bind-attr id=todo.id}} >
+		{{todo.description}}
+	</div>
 	{{#link-to 'todos.edit' todo.id class="btn btn-primary"}}Edit{{/link-to}}
 	<input type="submit" class="btn btn-danger remove_fields"  value="Delete" {{action 'deleteRecord'}}/>
 </li>

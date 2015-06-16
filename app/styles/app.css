@@ -12,7 +12,7 @@
 }
 
 #list ul{
-	list-style-type: none;
+	/*list-style-type: none;*/
 	width: 1000px;
 }
 
@@ -37,5 +37,19 @@
 #new-todo h1{
 	color: #31b0d5;
 	font: bold 20px/1 Helvetica, Verdana, sans-serif;
+}
+
+#edit-todo {
+  margin-top: 30px;
+  margin-left: 13%;
+}
+
+#edit-todo h1{
+	color: #31b0d5;
+	font: bold 20px/1 Helvetica, Verdana, sans-serif;
+}
+
+.todo-description{
+	visibility: hidden;
 }
 
